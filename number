@@ -1,0 +1,126 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <time.h>
+int main(){
+	int toward;
+	int i=0,j=0;
+	char migong[10][10] = {'*'};
+	migong[0][0]='A';
+	char gonumber = 'B';
+	srand((unsigned)time(NULL));
+	
+	while(gonumber <('Z'+1))
+	{
+		toward = rand() % 4;
+		if((migong[i-1][j]!='*')&&(migong[i+1][j]!='*')&&(migong[i][j+1]!='*')&&(migong[i][j-1]!='*')) break;
+		if((i>=0&&i+1<10)||(j>=0&&j+1<10))
+		{
+		switch(toward)
+		{
+			case 0:
+				{
+				if(migong[i-1][j]=='*')
+				{
+				migong[i-1][j]=gonumber;
+				gonumber+=1;
+				i-=1;
+				}
+				}break;
+			
+			case 1:
+				{
+				if(migong[i+1][j]=='*')
+				{
+				migong[i+1][j]=gonumber;
+				gonumber+=1;
+				i+=1;
+				}
+				}break;
+			
+			
+			case 2:
+				{
+				if(migong[i][j-1]=='*')
+				{
+				migong[i][j-1]=gonumber;
+				gonumber+=1;
+				j-=1;
+				}
+				}break;
+			
+			case 3:
+				{
+				if(migong[i][j+1]=='*')
+		 		{
+				migong[i][j+1]=gonumber;
+				gonumber+=1;
+				j+=1;
+				}}break;
+			}
+		}
+	}
+	
+	for(i=0;i<10;i++){
+			for(j=0;j<10;j++){
+				printf("%c",migong[i][j]);
+			}
+			printf("\n");
+		}
+	
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*int main()
+{
+	int first_value,last_value;
+	char tool;
+	
+	scanf("%d",&first_value);
+	
+	while((tool=getchar()) != '\n')
+	{
+		scanf("%d",&last_value);
+		switch(tool)
+		{
+			case '+':first_value+=last_value;break;
+			case '-':first_value-=last_value;break;
+			case '*':first_value*=last_value;break;
+			case '/':first_value/=last_value;break;
+		}
+	}
+	printf("%d",first_value);
+
+    return 0;
+} */
+
