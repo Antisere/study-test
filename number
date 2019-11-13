@@ -10,7 +10,8 @@ int main(){
 	char gonumber = 'B';
 	srand((unsigned)time(NULL));
 	
-	while(gonumber <('Z'+1))
+	i = 0,j = 0;
+	while(gonumber <='Z')
 	{
 		toward = rand() % 4;
 		if((migong[i-1][j]!='*')&&(migong[i+1][j]!='*')&&(migong[i][j+1]!='*')&&(migong[i][j-1]!='*')) break;
@@ -70,57 +71,3 @@ int main(){
 	
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*int main()
-{
-	int first_value,last_value;
-	char tool;
-	
-	scanf("%d",&first_value);
-	
-	while((tool=getchar()) != '\n')
-	{
-		scanf("%d",&last_value);
-		switch(tool)
-		{
-			case '+':first_value+=last_value;break;
-			case '-':first_value-=last_value;break;
-			case '*':first_value*=last_value;break;
-			case '/':first_value/=last_value;break;
-		}
-	}
-	printf("%d",first_value);
-
-    return 0;
-} */
-
